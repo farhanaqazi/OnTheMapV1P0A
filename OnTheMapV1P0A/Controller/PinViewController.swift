@@ -15,7 +15,7 @@ class PinViewController: UIViewController, MKMapViewDelegate, UITextFieldDelegat
     var firstName: String?
     var lastName: String?
     
-    var geocoder = CLGeocoder()
+    var geoloca = CLGeocoder()
     
     @IBOutlet weak var locationTextField: UITextField!
     
@@ -40,7 +40,7 @@ class PinViewController: UIViewController, MKMapViewDelegate, UITextFieldDelegat
     }
     
     func MapStringChecker(mapString: String) {
-        geocoder.geocodeAddressString(mapString) { (placemarks, error) in
+        geoloca.geocodeAddressString(mapString) { (placemarks, error) in
             
   
             if error != nil {

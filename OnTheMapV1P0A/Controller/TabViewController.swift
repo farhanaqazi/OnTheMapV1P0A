@@ -14,7 +14,7 @@ class TabViewController: UITabBarController, UINavigationControllerDelegate, UIT
     var lastName: String?
     var removeIndex: Int?
     
-    @IBAction func logoutButtonTapped(_ sender: Any) {
+    @IBAction func LoggedOut(_ sender: Any) {
 
         let loginPage = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         UdacityClient.sharedInstance().deleteSession() { (success, sessionID, error) in
@@ -34,7 +34,7 @@ class TabViewController: UITabBarController, UINavigationControllerDelegate, UIT
         }
     }
     
-    @IBAction func addPinPressed(_ sender: Any) {
+    @IBAction func PinAdded(_ sender: Any) {
         
         ParseClient.sharedInstance().getSingleStudentLocation() { (result, error) in
             if (error != nil){

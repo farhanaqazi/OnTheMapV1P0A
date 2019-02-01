@@ -15,7 +15,7 @@ class LoginViewController: UIViewController,UINavigationControllerDelegate, UITe
     @IBOutlet weak var udacityUsername: UITextField!
     @IBOutlet weak var udacityPassword: UITextField!
     
-    func completeLogin() {
+    func CompleteLoginProcess() {
         let controller = storyboard!.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
         present(controller, animated: false, completion: nil)
     }
@@ -34,7 +34,7 @@ class LoginViewController: UIViewController,UINavigationControllerDelegate, UITe
             UdacityClient.sharedInstance().postSession(username: UdacityClient.LoginData.username, password: UdacityClient.LoginData.password) { (success, sessionID, errorString)  in
                 performUIUpdatesOnMain {
                     if success {
-                        self.completeLogin()
+                        self.CompleteLoginProcess()
                     } else {
                         let alert = UIAlertController(title: "Alert", message: "Error logging in", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in

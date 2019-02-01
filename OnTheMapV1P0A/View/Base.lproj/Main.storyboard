@@ -114,13 +114,13 @@
                     <navigationItem key="navigationItem" id="zzs-WC-PRf">
                         <barButtonItem key="leftBarButtonItem" title="Add" image="icon_addpin" id="Pfz-Io-46b">
                             <connections>
-                                <action selector="addPinPressed:" destination="woq-M4-vfo" id="RsL-2n-pjX"/>
+                                <action selector="PinAdded:" destination="woq-M4-vfo" id="RsL-2n-pjX"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Log out" id="6hZ-tc-uQQ">
                                 <connections>
-                                    <action selector="logoutButtonTapped:" destination="woq-M4-vfo" id="Aif-lO-ZFn"/>
+                                    <action selector="LoggedOut:" destination="woq-M4-vfo" id="Aif-lO-ZFn"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Refresh" image="icon_refresh" id="e5x-8D-CZM">
@@ -252,7 +252,7 @@
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="submitPressed:" destination="FJT-kM-iyW" eventType="touchUpInside" id="dPG-ya-eLr"/>
+                                    <action selector="SubmitButtonPressed:" destination="FJT-kM-iyW" eventType="touchUpInside" id="dPG-ya-eLr"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a link to Share here" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DE6-LP-YVl" userLabel="Link Text Field">

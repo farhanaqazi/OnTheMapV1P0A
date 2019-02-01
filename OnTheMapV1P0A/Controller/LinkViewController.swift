@@ -33,10 +33,10 @@ class LinkViewController: UIViewController, UINavigationControllerDelegate, UITe
 
         activityIndicatorView.startAnimating()
         activityIndicatorView.hidesWhenStopped = true;
-        PinShowOnMap()
+        PinShow()
         
     }
-    func PinShowOnMap() {
+    func PinShow() {
         
         geocoder.geocodeAddressString(mapString!) { (placemarks, error) in
             
@@ -77,7 +77,7 @@ class LinkViewController: UIViewController, UINavigationControllerDelegate, UITe
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func submitPressed(_ sender: Any) {
+    @IBAction func SubmitButtonPressed(_ sender: Any) {
         
         mediaURL = linkTextField.text
         
@@ -100,7 +100,7 @@ class LinkViewController: UIViewController, UINavigationControllerDelegate, UITe
                     performUIUpdatesOnMain {
                         if error == nil {
                             
-                            let loggedInUserDictionary = self.convertToDictionary(text: loggedInUser)
+                            let loggedInUserDictionary = self.DictionaryConverterFunction(text: loggedInUser)
                             StudentInfo.studentLocationList.append(loggedInUserDictionary!)
                             print(StudentInfo.studentLocationList)
                             
@@ -123,7 +123,7 @@ class LinkViewController: UIViewController, UINavigationControllerDelegate, UITe
                     performUIUpdatesOnMain {
                         if error == nil {
                             
-                            let loggedInUserDictionary = self.convertToDictionary(text: loggedInUser)
+                            let loggedInUserDictionary = self.DictionaryConverterFunction(text: loggedInUser)
                             StudentInfo.studentLocationList.append(loggedInUserDictionary!)
                             print(StudentInfo.studentLocationList)
                             self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -140,12 +140,13 @@ class LinkViewController: UIViewController, UINavigationControllerDelegate, UITe
         }
     }
     
-    func convertToDictionary(text: String) -> StudentInfo? {
+    func DictionaryConverterFunction(text: String) -> StudentInfo? {
         if let data = text.data(using: .utf8) {
             do {
                 let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
                 return StudentInfo(dictionary: dictionary!)
             } catch {
+                print("OOOPS!")
                 print(error.localizedDescription)
             }
         }
