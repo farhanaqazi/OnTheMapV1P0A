@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class TabViewController: UITabBarController {
+class TabViewController: UITabBarController, UINavigationControllerDelegate, UITextFieldDelegate {
     
     var firstName: String?
     var lastName: String?

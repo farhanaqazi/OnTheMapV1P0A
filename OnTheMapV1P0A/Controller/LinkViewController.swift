@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
-class LinkViewController: UIViewController {
+class LinkViewController: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate {
     var firstName: String?
     var lastName: String?
     var mapString: String?

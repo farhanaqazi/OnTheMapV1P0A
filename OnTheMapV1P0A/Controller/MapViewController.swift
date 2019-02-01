@@ -6,10 +6,9 @@
 //
 
 import UIKit
-
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate,UINavigationControllerDelegate, UITextFieldDelegate  {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!

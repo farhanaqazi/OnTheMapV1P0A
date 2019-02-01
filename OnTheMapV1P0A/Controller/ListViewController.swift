@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class ListViewController: UITableViewController {
+class ListViewController: UITableViewController, UINavigationControllerDelegate, UITextFieldDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
